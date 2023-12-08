@@ -1,0 +1,322 @@
+@import "nullstyle";
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+//========================================================================================================================================================
+// GENERAL
+body {
+    font-family: "Inter", sans-serif;
+}
+
+[class*="__container"] {
+    margin: 0 auto;
+    max-width: 1440px;
+    padding-top: 100px;
+    padding-bottom: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    @media (max-width: 940px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    @media (max-width: 787px) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @media (max-width: 587px) {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    @media (max-width: 400px) {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}
+
+.wrraper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.wrraper > main {
+    flex-grow: 1;
+}
+
+//========================================================================================================================================================
+// HEADER
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    background-color: #d9d9d9;
+    font-size: 40px;
+    padding: 20px 0;
+    box-shadow: 0px 8px 10px 8px rgba(0, 0, 0, 0.25);
+    &__container {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        display: flex;
+        column-gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+        .name {
+            max-width: 350px;
+            flex: 1 1;
+            @media (max-width: 940px) {
+                font-size: 25px;
+            }
+        }
+        .profession {
+            text-align: center;
+        }
+        .contact-btn {
+            max-width: 350px;
+            padding: 12px 20px;
+            flex: 1 1;
+            font-size: 40px;
+            color: #d9d9d9;
+            border-radius: 6px;
+            background-color: #343434;
+            transition: all 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    background-color: #777;
+                    color: #444;
+                }
+            }
+            @media (max-width: 940px) {
+                font-size: 25px;
+            }
+        }
+    }
+}
+//========================================================================================================================================================
+// MAIN
+.main {
+    padding-top: 100px;
+    background: #343434;
+
+    .about {
+        background-color: #444;
+        &__container {
+            display: flex;
+            justify-content: space-between;
+            gap: 57px;
+            .text-content {
+                max-width: 862px;
+                background-color: #d9d9d9;
+                padding: 50px;
+                border-radius: 6px;
+                box-shadow: 0px 8px 10px 8px rgba(0, 0, 0, 0.25);
+                & > div {
+                    &:not(:last-child) {
+                        margin-bottom: 12px;
+                    }
+                }
+                .name-title {
+                    font-size: 64px;
+                    line-height: 2;
+                }
+                .achievements {
+                    font-size: 36px;
+                    line-height: 2;
+                }
+                .download-cv {
+                    font-size: 40px;
+                }
+            }
+            .image-content {
+                flex: 0 1 30%;
+                background-color: #fff;
+                overflow: hidden;
+                border-radius: 6px;
+                position: relative;
+                padding-bottom: 27.847222%;
+                box-shadow: 0px 8px 10px 8px rgba(0, 0, 0, 0.25);
+                img {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0px;
+                    left: 0;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+    .portfolio {
+        background-color: #d9d9d9;
+        // .portfolio__container
+
+        &__container {
+        }
+
+        // .portfolio__title
+
+        &__title {
+            color: #000;
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 2;
+        }
+
+        // .portfolio__wrapper
+
+        &__wrapper {
+        }
+
+        // .portfolio__slide
+
+        &__slide {
+        }
+
+        // .portfolio__item
+
+        &__item {
+        }
+
+        .portfoliowiper {
+        }
+        .swiper-wrapper {
+        }
+        .swiper-slide {
+        }
+        .swiper-pagination {
+        }
+        .swiper-button-prev {
+        }
+        .swiper-button-next {
+        }
+        .swiper-scrollbar {
+        }
+    }
+
+    .skills {
+        // .skills__container
+
+        &__container {
+        }
+
+        // .skills__title
+
+        &__title {
+            color: #fff;
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 2;
+            &:not(:last-child) {
+                margin-bottom: 80px;
+            }
+        }
+
+        // .skills__grid
+
+        &__grid {
+            border-radius: 6px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 12px;
+            position: relative;
+            &::before {
+                content: "";
+                width: 95%;
+                height: 90%;
+                left: 2.5%;
+                top: 5%;
+                position: absolute;
+                background-color: #787878;
+                box-shadow: 0 0 12px 12px #787878;
+                z-index: 0;
+            }
+            // background-color: #787878;
+        }
+
+        // .skills__item
+
+        &__item {
+            position: relative;
+            z-index: 1;
+            background-color: #fff;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 0 12px 2px #787878;
+            // min-height: 212px;
+        }
+        .item-skill {
+            display: flex;
+            // .item-skill__icon
+
+            &__icon {
+                flex: 0 0 29.84127%; /* 188/630 */
+                padding: 30px;
+                background-color: #343434;
+                position: relative;
+                svg {
+                    height: 90px;
+                    width: 90px;
+                    position: absolute;
+
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
+                    fill: #fff;
+                    filter: drop-shadow(0 0 18px #787878);
+                }
+            }
+
+            // .item-skill__text
+
+            &__text {
+                width: 100%;
+                padding: 30px;
+            }
+
+            // .item-skill__title
+
+            &__title {
+                color: #343434;
+                text-align: center;
+                font-size: 36px;
+                line-height: 1.6;
+            }
+
+            // .item-skill__description
+
+            &__description {
+                color: #787878;
+                text-align: center;
+                font-size: 24px;
+                line-height: 1.5;
+            }
+        }
+    }
+
+    .certificates {
+        // .certificates__container
+
+        &__container {
+        }
+        // .certificates__title
+        &__title {
+            color: #fff;
+            text-align: center;
+            font-size: 48px;
+            font-weight: 700;
+            line-height: 2;
+        }
+        // .certificates__list
+
+        &__list {
+            color: #fff;
+        }
+    }
+}
+
+//========================================================================================================================================================
+// FOOTER
