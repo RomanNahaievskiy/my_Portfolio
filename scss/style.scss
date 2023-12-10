@@ -394,3 +394,95 @@ body {
 
 //========================================================================================================================================================
 // FOOTER
+
+.footer {
+    background-color: #787878;
+    // .footer__container
+
+    &__container {
+    }
+
+    // .footer__columns
+
+    &__columns {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__title {
+        text-align: center;
+        color: #fff;
+        font-size: 36px;
+        line-height: 2;
+        &:not(:last-child) {
+            margin-bottom: 35px;
+        }
+    }
+    &__icons {
+        fill: #fff;
+        transition: all 0.3s ease 0s;
+    }
+}
+.columns-footer {
+    &__item {
+        font-size: 18px;
+        line-height: 2;
+        li {
+            a {
+                position: relative;
+                padding-left: 32px;
+                transition: all 0.3s ease 0s;
+                color: #fff;
+                font-size: 24px;
+                &::before {
+                    position: absolute;
+                    content: "";
+                    display: block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 50%;
+                    top: 12px;
+                    left: 4px;
+                    background-color: #fff;
+                    transition: all 0.3s ease 0s;
+                }
+                @media (any-hover: hover) {
+                    &:hover {
+                        color: #343434;
+                        text-shadow: 0 0 12px #343434;
+                        &::before {
+                            background-color: #343434;
+                            box-shadow: 0 0 12px 0 #343434;
+                        }
+                        .footer__icons {
+                            fill: #343434;
+                            filter: drop-shadow(0 0 12px #343434);
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .socials {
+        ul li a {
+            padding: 0;
+            display: grid;
+            grid-template-columns: auto 1fr 1fr;
+            column-gap: 20px;
+            align-items: center;
+            &::before {
+                position: relative;
+                top: 0;
+                left: 0;
+            }
+        }
+        ul li a span {
+            max-width: 230px;
+        }
+    }
+    .contacts {
+        min-width: 466px;
+    }
+    .links {
+        // text-align: right;
+    }
+}

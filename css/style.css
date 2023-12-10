@@ -384,3 +384,81 @@ body {
 .main .certificates__list a {
   color: #fff;
 }
+
+.footer {
+  background-color: #787878;
+}
+.footer__columns {
+  display: flex;
+  justify-content: space-between;
+}
+.footer__title {
+  text-align: center;
+  color: #fff;
+  font-size: 36px;
+  line-height: 2;
+}
+.footer__title:not(:last-child) {
+  margin-bottom: 35px;
+}
+.footer__icons {
+  fill: #fff;
+  transition: all 0.3s ease 0s;
+}
+
+.columns-footer__item {
+  font-size: 18px;
+  line-height: 2;
+}
+.columns-footer__item li a {
+  position: relative;
+  padding-left: 32px;
+  transition: all 0.3s ease 0s;
+  color: #fff;
+  font-size: 24px;
+}
+.columns-footer__item li a::before {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 12px;
+  left: 4px;
+  background-color: #fff;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .columns-footer__item li a:hover {
+    color: #343434;
+    text-shadow: 0 0 12px #343434;
+  }
+  .columns-footer__item li a:hover::before {
+    background-color: #343434;
+    box-shadow: 0 0 12px 0 #343434;
+  }
+  .columns-footer__item li a:hover .footer__icons {
+    fill: #343434;
+    filter: drop-shadow(0 0 12px #343434);
+  }
+}
+.columns-footer .socials ul li a {
+  padding: 0;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  align-items: center;
+}
+.columns-footer .socials ul li a::before {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.columns-footer .socials ul li a span {
+  max-width: 230px;
+}
+.columns-footer .contacts {
+  min-width: 466px;
+}
