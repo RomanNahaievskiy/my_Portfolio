@@ -95,7 +95,7 @@ body {
 //========================================================================================================================================================
 // MAIN
 .main {
-    padding-top: 100px;
+    padding-top: 140px;
     background: #343434;
 
     .about {
@@ -129,6 +129,7 @@ body {
             }
             .image-content {
                 flex: 0 1 30%;
+                min-height: 540px;
                 background-color: #fff;
                 overflow: hidden;
                 border-radius: 6px;
@@ -139,6 +140,7 @@ body {
                     position: absolute;
                     width: 100%;
                     height: 100%;
+                    transform: scaleX(-1);
                     top: 0px;
                     left: 0;
                     object-fit: cover;
@@ -164,6 +166,11 @@ body {
             line-height: 2;
         }
 
+        // .portfolio__slider
+
+        &__slider {
+        }
+
         // .portfolio__wrapper
 
         &__wrapper {
@@ -179,12 +186,6 @@ body {
         &__item {
         }
 
-        .portfoliowiper {
-        }
-        .swiper-wrapper {
-        }
-        .swiper-slide {
-        }
         .swiper-pagination {
         }
         .swiper-button-prev {
@@ -192,6 +193,71 @@ body {
         .swiper-button-next {
         }
         .swiper-scrollbar {
+        }
+        .swiper {
+        }
+        .swiper-wrapper {
+        }
+        .swiper-slide {
+        }
+
+        .preview {
+            display: block;
+
+            // .preview__img-cnt
+
+            &__img-cnt {
+                padding: 12px;
+                border-radius: 6px;
+                overflow: hidden;
+                display: grid;
+                grid-template-columns: 6fr 4.81fr;
+                grid-template-rows: 1.17fr 1fr;
+                gap: 24px 24px;
+                grid-template-areas:
+                    "pc mobile"
+                    "tablet mobile";
+            }
+            .mobile {
+                grid-area: mobile;
+            }
+            .tablet {
+                grid-area: tablet;
+            }
+            .pc {
+                grid-area: pc;
+            }
+            // .preview__img
+
+            &__img {
+                display: block;
+                border-radius: 6px;
+                width: 100%;
+                box-shadow: 0 0 12px #777;
+            }
+
+            // .preview__text
+
+            &__text {
+                text-align: center;
+                color: #343434;
+                padding: 24px;
+            }
+
+            // .preview__title
+
+            &__title {
+                font-size: 24px;
+                font-weight: 900;
+                line-height: 2;
+            }
+
+            // .preview__subtitle
+
+            &__subtitle {
+                font-size: 20px;
+                line-height: 1.6;
+            }
         }
     }
 
@@ -314,6 +380,14 @@ body {
 
         &__list {
             color: #fff;
+            li {
+                list-style: circle;
+                font-size: 24px;
+                line-height: 2;
+            }
+            a {
+                color: #fff;
+            }
         }
     }
 }
