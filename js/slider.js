@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', swiperInit);
 
 function swiperInit() {
     let deviceWidth = window.innerWidth;
-    if (deviceWidth <= 768) { cardsSwiperInit(); } else { cubeSwiperInit(); }
+    if (deviceWidth <= 768) { cardsSwiperInit(); } else if (deviceWidth <= 1024) { cubeSwiperInit(); } else { coverflowSwiperInit() }
 
 
     function cardsSwiperInit() {
@@ -50,7 +50,26 @@ function swiperInit() {
                 el: '.swiper-pagination',
             },
         });
-
-
     };
-};
+    function coverflowSwiperInit() {
+        var swiper = new Swiper('.portfolio__slider.swiper', {
+            // Налаштування Swiper
+            effect: 'coverflow',
+            // effect: 'cube', //https://swiperjs.com/swiper-api#cube-effect:~:text=Enables%20slides%20shadows-,Cube%20Effect,-Be%20sure%20to
+            // effect: 'coverflow',
+            // effect: 'fade', // на всю ширину контейнера
+            // effect: 'flip',  // на всю ширину контейнера
+            // effect: 'creative', // https://swiperjs.com/swiper-api#creative-effect:~:text=Enables%20slides%20shadows-,Creative%20Effect,-Be%20sure%20to
+            // width: 340,
+            slidesPerView: 3,
+            slidesPerGroup: 1,
+            loop: true,
+            width: null,
+            autoHeight: false,
+            spaceBetween: 10,
+            pagination: {
+                el: '.swiper-pagination',
+            },
+        });
+    };
+}; 
