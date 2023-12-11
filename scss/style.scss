@@ -293,6 +293,15 @@ body {
                 grid-template-areas:
                     "pc mobile"
                     "tablet mobile";
+                @media (max-width: 768px) {
+                    gap: 8px 8px;
+                    grid-template-columns: 3fr 1fr;
+                    grid-template-rows: 1fr 1.6fr;
+
+                    grid-template-areas:
+                        "tablet mobile"
+                        "pc pc";
+                }
             }
             .mobile {
                 grid-area: mobile;
