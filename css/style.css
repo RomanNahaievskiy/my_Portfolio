@@ -95,7 +95,7 @@ body {
 [class*=__container] {
   margin: 0 auto;
   max-width: 1440px;
-  padding-top: 10px;
+  padding-top: 30px;
   padding-bottom: 90px;
   padding-left: 20px;
   padding-right: 20px;
@@ -138,7 +138,7 @@ body {
 }
 
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
@@ -163,7 +163,7 @@ body {
 }
 @media (max-width: 940px) {
   .header__container .name {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 @media (max-width: 540px) {
@@ -197,7 +197,7 @@ body {
 }
 @media (max-width: 940px) {
   .header__container .contact-btn {
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 @media (max-width: 540px) {
@@ -230,13 +230,19 @@ body {
   padding: 50px;
   border-radius: 6px;
   box-shadow: 0px 8px 10px 8px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
 }
 .main .about__container .text-content > div:not(:last-child) {
   margin-bottom: 12px;
 }
 .main .about__container .text-content .name-title {
+  font-weight: bold;
   font-size: 64px;
   line-height: 2;
+  text-shadow: 0 0 45px #345555;
 }
 @media (max-width: 540px) {
   .main .about__container .text-content .name-title {
@@ -245,8 +251,11 @@ body {
   }
 }
 .main .about__container .text-content .achievements {
-  font-size: 36px;
-  line-height: 2;
+  font-size: 32px;
+  line-height: 1.5;
+}
+.main .about__container .text-content .achievements:not(:last-child) {
+  margin-bottom: 40px;
 }
 @media (max-width: 540px) {
   .main .about__container .text-content .achievements {
@@ -255,7 +264,24 @@ body {
   }
 }
 .main .about__container .text-content .download-cv {
-  font-size: 40px;
+  display: block;
+  border-radius: 6px;
+  text-align: center;
+  padding: 22px;
+  background-color: #343434;
+  font-size: 32px;
+  color: #d9d9d9;
+  box-shadow: 0px 0px 1px #777777, 0 46px 34px -33px #345555, inset 0 0 12px 2px #343434;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .main .about__container .text-content .download-cv:hover {
+    background-color: #777777;
+  }
+}
+.main .about__container .text-content .download-cv:active {
+  transition: all 0.1s ease 0s;
+  color: #345555;
 }
 @media (max-width: 540px) {
   .main .about__container .text-content .download-cv {
@@ -311,6 +337,10 @@ body {
 .main .portfolio {
   background-color: #d9d9d9;
 }
+.main .portfolio__container {
+  max-width: 100%;
+  padding: 30px 0%;
+}
 .main .portfolio__title {
   color: #000;
   text-align: center;
@@ -323,6 +353,9 @@ body {
   .main .portfolio__title {
     font-size: 34px;
   }
+}
+.main .portfolio__slider {
+  padding: 50px 0;
 }
 @media (max-width: 1024px) {
   .main .portfolio .swiper {
@@ -341,6 +374,12 @@ body {
   .main .portfolio .swiper {
     text-align: center;
     max-width: 380px;
+  }
+}
+@media (max-width: 500px) {
+  .main .portfolio .swiper {
+    text-align: center;
+    max-width: 300px;
   }
 }
 @media (max-width: 400px) {
