@@ -240,7 +240,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(13deg, #343434 0%, rgba(52, 52, 52, 0.4666666667) 30%, rgba(52, 52, 52, 0.2) 80%);
+  background: linear-gradient(13deg, #343434 34%, rgba(52, 52, 52, 0.4666666667) 70%, rgba(52, 52, 52, 0.2) 80%);
   z-index: 2;
 }
 .main .about__background span {
@@ -251,7 +251,16 @@ body {
   display: block;
   width: 200%;
   height: 200%;
-  background: url("../img/bg/header-code.png") 0 0/100% no-repeat;
+  background: url("../img/bg/header-code.png") 0 0/100% repeat-y;
+  animation: bgmoove 35s linear infinite alternate;
+}
+@keyframes bgmoove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-10%, -100%);
+  }
 }
 .main .about__background img {
   display: none;
@@ -513,6 +522,9 @@ body {
   font-size: 20px;
   line-height: 1.6;
 }
+.main .skills {
+  background-color: #343434;
+}
 .main .skills__title {
   color: #fff;
   text-align: center;
@@ -605,6 +617,9 @@ body {
     font-size: 18px;
   }
 }
+.main .certificates {
+  background-color: #343434;
+}
 .main .certificates__title {
   color: #fff;
   text-align: center;
@@ -665,36 +680,28 @@ body {
   line-height: 2;
 }
 .columns-footer__item li a {
+  display: inline-flex;
+  align-items: center;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
   position: relative;
   padding-left: 32px;
   transition: all 0.3s ease 0s;
   color: #fff;
   font-size: 24px;
 }
-.columns-footer__item li a::before {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  top: 12px;
-  left: 4px;
-  background-color: #fff;
-  transition: all 0.3s ease 0s;
+.columns-footer__item li a svg {
+  font-size: 20px;
+  width: 32px;
 }
 @media (any-hover: hover) {
   .columns-footer__item li a:hover {
     color: #343434;
     text-shadow: 0 0 12px #343434;
   }
-  .columns-footer__item li a:hover::before {
-    background-color: #343434;
-    box-shadow: 0 0 12px 0 #343434;
-  }
   .columns-footer__item li a:hover .footer__icons {
-    fill: #343434;
     filter: drop-shadow(0 0 12px #343434);
+    fill: #343434;
   }
 }
 @media (max-width: 450px) {

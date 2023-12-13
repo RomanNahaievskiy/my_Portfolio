@@ -136,7 +136,7 @@ body {
                 position: absolute;
                 top: 0;
                 left: 0;
-                background: linear-gradient(13deg, #343434 0%, #34343477 30%, #34343433 80%);
+                background: linear-gradient(13deg, #343434 34%, #34343477 70%, #34343433 80%);
                 z-index: 2;
             }
 
@@ -148,7 +148,16 @@ body {
                 display: block;
                 width: 200%;
                 height: 200%;
-                background: url("../img/bg/header-code.png") 0 0/ 100% no-repeat;
+                background: url("../img/bg/header-code.png") 0 0/ 100% repeat-y;
+                animation: bgmoove 35s linear infinite alternate;
+            }
+            @keyframes bgmoove {
+                0% {
+                    transform: translate(0, 0);
+                }
+                100% {
+                    transform: translate(-10%, -100%);
+                }
             }
             img {
                 display: none;
@@ -458,6 +467,7 @@ body {
     }
 
     .skills {
+        background-color: #343434;
         // .skills__container
 
         &__container {
@@ -571,6 +581,7 @@ body {
     }
 
     .certificates {
+        background-color: #343434;
         // .certificates__container
 
         &__container {
@@ -644,34 +655,26 @@ body {
         line-height: 2;
         li {
             a {
+                display: inline-flex;
+                align-items: center;
+                column-gap: 12px;
                 position: relative;
                 padding-left: 32px;
                 transition: all 0.3s ease 0s;
                 color: #fff;
                 font-size: 24px;
-                &::before {
-                    position: absolute;
-                    content: "";
-                    display: block;
-                    width: 8px;
-                    height: 8px;
-                    border-radius: 50%;
-                    top: 12px;
-                    left: 4px;
-                    background-color: #fff;
-                    transition: all 0.3s ease 0s;
+                svg {
+                    font-size: 20px;
+                    width: 32px;
                 }
                 @media (any-hover: hover) {
                     &:hover {
                         color: #343434;
                         text-shadow: 0 0 12px #343434;
-                        &::before {
-                            background-color: #343434;
-                            box-shadow: 0 0 12px 0 #343434;
-                        }
+
                         .footer__icons {
-                            fill: #343434;
                             filter: drop-shadow(0 0 12px #343434);
+                            fill: #343434;
                         }
                     }
                 }
