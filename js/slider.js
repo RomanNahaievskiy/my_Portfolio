@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 window.addEventListener('resize', function () {
 
-    // swiperInit(); // Переініціалізуємо Swiper при зміні розміру екрану
-    this.location.reload();
+    swiperInit(); // Переініціалізуємо Swiper при зміні розміру екрану
+    // this.location.reload();
 
 });
 
