@@ -1,24 +1,34 @@
 "use strict"
+var mySwiper = null;
+document.addEventListener('DOMContentLoaded', function () {
 
-document.addEventListener('DOMContentLoaded', swiperInit);
+    swiperInit();
 
+
+});
+window.addEventListener('resize', function () {
+
+    // swiperInit(); // Переініціалізуємо Swiper при зміні розміру екрану
+    this.location.reload();
+
+});
 
 function swiperInit() {
+
+
+    if (mySwiper) {
+        mySwiper.destroy(true, true); // Видалення попереднього екземпляру Swiper
+    }
+
+
     let deviceWidth = window.innerWidth;
-    if (deviceWidth <= 768) { cardsSwiperInit(); } else if (deviceWidth <= 1024) { cubeSwiperInit(); } else { coverflowSwiperInit() }
+    if (deviceWidth <= 768) { mySwiper = cardsSwiperInit(); } else if (deviceWidth <= 1024) { mySwiper = cubeSwiperInit(); } else { mySwiper = coverflowSwiperInit() }
 
 
     function cardsSwiperInit() {
         var swiper = new Swiper('.portfolio__slider.swiper', {
             // Налаштування Swiper
             effect: 'cards',
-            // effect: 'cube', //https://swiperjs.com/swiper-api#cube-effect:~:text=Enables%20slides%20shadows-,Cube%20Effect,-Be%20sure%20to
-            // effect: 'coverflow',
-            // effect: 'fade', // на всю ширину контейнера
-            // effect: 'flip',  // на всю ширину контейнера
-            // effect: 'creative', // https://swiperjs.com/swiper-api#creative-effect:~:text=Enables%20slides%20shadows-,Creative%20Effect,-Be%20sure%20to
-            // width: 340,
-            // slidesPerView: 1,
             slidesPerGroup: 1,
             loop: true,
             width: null,
@@ -29,6 +39,7 @@ function swiperInit() {
                 el: '.swiper-pagination',
             },
         });
+        return swiper;
     }
 
     function cubeSwiperInit() {
@@ -53,6 +64,7 @@ function swiperInit() {
                 el: '.swiper-pagination',
             },
         });
+        return swiper;
     };
     function coverflowSwiperInit() {
         var swiper = new Swiper('.portfolio__slider.swiper', {
@@ -75,5 +87,9 @@ function swiperInit() {
                 el: '.swiper-pagination',
             },
         });
+        return swiper;
     };
-}; 
+};
+
+
+
