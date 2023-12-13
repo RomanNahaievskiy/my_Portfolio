@@ -33,7 +33,6 @@ function swiperInit() {
             loop: true,
             width: null,
             autoHeight: false,
-            spaceBetween: 100,
             transitionDuration: 0.3,
             pagination: {
                 el: '.swiper-pagination',
