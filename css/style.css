@@ -709,22 +709,6 @@ body {
     font-size: 16px;
   }
 }
-.columns-footer .socials ul li a {
-  padding: 0;
-  display: grid;
-  grid-template-columns: auto 1fr 1fr;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  align-items: center;
-}
-.columns-footer .socials ul li a::before {
-  position: relative;
-  top: 0;
-  left: 0;
-}
-.columns-footer .socials ul li a span {
-  max-width: 230px;
-}
 .columns-footer .contacts {
   min-width: 466px;
 }

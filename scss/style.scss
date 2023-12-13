@@ -685,21 +685,21 @@ body {
         }
     }
     .socials {
-        ul li a {
-            padding: 0;
-            display: grid;
-            grid-template-columns: auto 1fr 1fr;
-            column-gap: 20px;
-            align-items: center;
-            &::before {
-                position: relative;
-                top: 0;
-                left: 0;
-            }
-        }
-        ul li a span {
-            max-width: 230px;
-        }
+        // ul li a {
+        //     padding: 0;
+        //     display: grid;
+        //     grid-template-columns: auto 1fr 1fr;
+        //     column-gap: 20px;
+        //     align-items: center;
+        //     &::before {
+        //         position: relative;
+        //         top: 0;
+        //         left: 0;
+        //     }
+        // }
+        // ul li a span {
+        //     max-width: 230px;
+        // }
     }
     .contacts {
         min-width: 466px;
