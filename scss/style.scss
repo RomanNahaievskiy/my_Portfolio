@@ -274,6 +274,19 @@ body {
 
         .swiper-pagination {
         }
+
+        .swiper-pagination-bullet {
+            background-color: #eef7fb;
+            opacity: 1;
+            width: 12px;
+            height: 12px;
+            margin: 0 3px;
+        }
+
+        .swiper-pagination-bullet-active {
+            background-color: #343434;
+        }
+
         .swiper-button-prev {
         }
         .swiper-button-next {

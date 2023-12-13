@@ -357,6 +357,16 @@ body {
 .main .portfolio__slider {
   padding: 50px 0;
 }
+.main .portfolio .swiper-pagination-bullet {
+  background-color: #eef7fb;
+  opacity: 1;
+  width: 12px;
+  height: 12px;
+  margin: 0 3px;
+}
+.main .portfolio .swiper-pagination-bullet-active {
+  background-color: #343434;
+}
 @media (max-width: 1024px) {
   .main .portfolio .swiper {
     text-align: center;
