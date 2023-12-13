@@ -29,11 +29,11 @@ function swiperInit() {
         var swiper = new Swiper('.portfolio__slider.swiper', {
             // Налаштування Swiper
             effect: 'cards',
-            slidesPerGroup: 1,
+
             loop: true,
-            width: null,
+
             autoHeight: false,
-            transitionDuration: 0.3,
+
             pagination: {
                 el: '.swiper-pagination',
             },
