@@ -14,8 +14,11 @@ body {
     padding-bottom: 90px;
     padding-left: 20px;
     padding-right: 20px;
-
+    @media (max-width: 1440) {
+        max-width: 1230px;
+    }
     @media (max-width: 940px) {
+        max-width: 800px;
         padding-left: 15px;
         padding-right: 15px;
     }
@@ -109,15 +112,55 @@ body {
 //========================================================================================================================================================
 // MAIN
 .main {
-    padding-top: 100px;
-    background: #343434;
+    // padding-top: 100px;
+    // background: #343434;
 
     .about {
+        position: relative;
         background-color: #444;
+        // .about__background
+        &__background {
+            background-color: #272822;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            overflow: hidden;
+            &::before {
+                content: "";
+                display: block;
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                background: linear-gradient(13deg, #343434 0%, #34343477 30%, #34343433 80%);
+                z-index: 2;
+            }
+
+            span {
+                position: relative;
+                z-index: 1;
+                transform: matrix(0.98, -0.19, 0.49, 0.92, 6, 0);
+                filter: blur(3px) grayscale(80%);
+                display: block;
+                width: 200%;
+                height: 200%;
+                background: url("../img/bg/header-code.png") 0 0/ 100% no-repeat;
+            }
+            img {
+                display: none;
+                width: 100%;
+            }
+        }
         &__container {
             display: flex;
             justify-content: space-between;
             gap: 57px;
+            position: relative;
+            z-index: 2;
             .text-content {
                 // max-width: 862px;
                 flex: 1 1 862px;
@@ -265,11 +308,22 @@ body {
         // .portfolio__slide
 
         &__slide {
+            box-shadow: 0 0 34px 1px transparent;
+            transition: all 0.3s ease 0s;
+            @media (any-hover: hover) {
+                &:hover {
+                    .portfolio__item {
+                        box-shadow: 0 0 76px 1px #34343422;
+                        transition: all 0.3s ease 0s;
+                    }
+                }
+            }
         }
 
         // .portfolio__item
 
         &__item {
+            transition: all 0.3s ease 0s;
         }
 
         .swiper-pagination {
@@ -366,10 +420,16 @@ body {
             // .preview__img
 
             &__img {
+                transition: all 0.3s ease 0s;
                 display: block;
                 border-radius: 6px;
                 width: 100%;
                 box-shadow: 0 0 12px #777;
+                @media (any-hover: hover) {
+                    &:hover {
+                        transform: scale(1.02);
+                    }
+                }
             }
 
             // .preview__text
