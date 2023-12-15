@@ -132,6 +132,7 @@ body {
 }
 
 .wrraper {
+  position: relative;
   min-height: 100%;
   min-width: 0;
   display: flex;
@@ -139,8 +140,48 @@ body {
   overflow: hidden;
 }
 
+.decor-digit {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+}
+
 .wrraper > main {
   flex-grow: 1;
+}
+
+.download-cv {
+  margin: 0;
+  display: block;
+  max-width: 800px;
+  border-radius: 6px;
+  text-align: center;
+  padding: 22px;
+  background-color: #343434;
+  font-size: 32px;
+  color: #d9d9d9;
+  box-shadow: 0px 0px 1px #777777, 0 46px 34px -33px #345555, inset 0 0 12px 2px #343434;
+  transition: all 0.3s ease 0s;
+}
+.download-cv:not(:last-child) {
+  margin-bottom: 40px;
+}
+@media (any-hover: hover) {
+  .download-cv:hover {
+    background-color: #777777;
+  }
+}
+.download-cv:active {
+  transition: all 0.1s ease 0s;
+  color: #345555;
+}
+@media (max-width: 540px) {
+  .download-cv {
+    font-size: 18px;
+    line-height: 1.2;
+  }
 }
 
 .header {
@@ -186,29 +227,30 @@ body {
   }
 }
 .header__container .contact-btn {
-  max-width: 350px;
-  padding: 12px 20px;
-  flex: 1 1;
-  font-size: 40px;
-  color: #d9d9d9;
+  display: block;
+  flex: 0 1 30%;
   border-radius: 6px;
+  text-align: center;
+  padding: 22px;
   background-color: #343434;
+  font-size: 32px;
+  color: #d9d9d9;
+  box-shadow: 0px 0px 1px #777777, 0 46px 34px -33px #345555, inset 0 0 12px 2px #343434;
   transition: all 0.3s ease 0s;
 }
 @media (any-hover: hover) {
   .header__container .contact-btn:hover {
-    background-color: #777;
-    color: #444;
+    background-color: #777777;
   }
 }
-@media (max-width: 940px) {
-  .header__container .contact-btn {
-    font-size: 20px;
-  }
+.header__container .contact-btn:active {
+  transition: all 0.1s ease 0s;
+  color: #345555;
 }
 @media (max-width: 540px) {
   .header__container .contact-btn {
     font-size: 18px;
+    line-height: 1.2;
   }
 }
 @media (max-width: 540px) {
@@ -218,6 +260,14 @@ body {
   }
 }
 
+@keyframes bgmoove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-10%, -100%);
+  }
+}
 .main .about {
   position: relative;
   background-color: #444;
@@ -254,14 +304,6 @@ body {
   background: url("../img/bg/header-code.png") 0 0/100% repeat-y;
   animation: bgmoove 35s linear infinite alternate;
 }
-@keyframes bgmoove {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(-10%, -100%);
-  }
-}
 .main .about__background img {
   display: none;
   width: 100%;
@@ -269,13 +311,15 @@ body {
 .main .about__container {
   display: flex;
   justify-content: space-between;
-  gap: 57px;
+  gap: 30px;
   position: relative;
   z-index: 2;
 }
 .main .about__container .text-content {
+  position: relative;
+  z-index: 1;
   flex: 1 1 862px;
-  background-color: #d9d9d9;
+  background-color: rgba(217, 217, 217, 0.5294117647);
   padding: 50px;
   border-radius: 6px;
   box-shadow: 0px 8px 10px 8px rgba(0, 0, 0, 0.25);
@@ -312,32 +356,6 @@ body {
     line-height: 1.5;
   }
 }
-.main .about__container .text-content .download-cv {
-  display: block;
-  border-radius: 6px;
-  text-align: center;
-  padding: 22px;
-  background-color: #343434;
-  font-size: 32px;
-  color: #d9d9d9;
-  box-shadow: 0px 0px 1px #777777, 0 46px 34px -33px #345555, inset 0 0 12px 2px #343434;
-  transition: all 0.3s ease 0s;
-}
-@media (any-hover: hover) {
-  .main .about__container .text-content .download-cv:hover {
-    background-color: #777777;
-  }
-}
-.main .about__container .text-content .download-cv:active {
-  transition: all 0.1s ease 0s;
-  color: #345555;
-}
-@media (max-width: 540px) {
-  .main .about__container .text-content .download-cv {
-    font-size: 18px;
-    line-height: 1.2;
-  }
-}
 .main .about__container .image-content {
   flex: 0 1 30%;
   min-height: 540px;
@@ -345,6 +363,7 @@ body {
   overflow: hidden;
   border-radius: 6px;
   position: relative;
+  z-index: 2;
   padding-bottom: 27.847222%;
   box-shadow: 0px 8px 10px 8px rgba(0, 0, 0, 0.25);
 }
@@ -361,6 +380,9 @@ body {
 @media (max-width: 1024px) {
   .main .about__container {
     gap: 20px;
+  }
+  .main .about__container .text-content {
+    border-radius: 6px;
   }
   .main .about__container .text-content {
     flex: 1 1 60%;
@@ -562,6 +584,7 @@ body {
 @media (max-width: 800px) {
   .main .skills__grid {
     grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: auto;
   }
 }
 .main .skills__item {
@@ -572,24 +595,138 @@ body {
   overflow: hidden;
   box-shadow: 0 0 12px 2px #787878;
 }
+@media (any-hover: hover) {
+  .main .skills__item:hover {
+    box-shadow: 0 0 12px 2px #d9d9d9;
+  }
+}
 .main .skills .item-skill {
   display: flex;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+@media (any-hover: hover) {
+  .main .skills .item-skill:hover .item-skill__icon {
+    background-color: #344545;
+    box-shadow: 0 0 34px 12px #344545;
+  }
+}
+.main .skills .item-skill__certificate-cnt {
+  visibility: hidden;
+  opacity: 0;
+  font-size: 18px;
+  line-height: 1.2;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background-color: #d9d9d9;
+  padding-left: 35%;
+  padding-top: 30px;
+  padding-right: 30px;
+  transition: all 1s ease 0s;
+  overflow: auto;
+  box-shadow: 0 0 200px 2px #787878;
+}
+.main .skills .item-skill__certificate-cnt a {
+  color: #343434;
+}
+.main .skills .item-skill__certificate-cnt ul li {
+  position: relative;
+  padding-left: 34px;
+}
+.main .skills .item-skill__certificate-cnt ul li:not(:last-child) {
+  margin-bottom: 8px;
+}
+.main .skills .item-skill__certificate-cnt li a span::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 32px;
+  height: 18px;
+  background: url("../img/icons/link-solid.svg") no-repeat;
+}
+.main .skills .item-skill.active .item-skill__certificate-cnt {
+  visibility: visible;
+  opacity: 1;
+  left: 0;
+}
+@media (any-hover: hover) {
+  .main .skills .item-skill.active .item-skill__certificate-cnt a:hover {
+    color: #345555;
+    text-decoration: underline;
+  }
+  .main .skills .item-skill.active .item-skill__certificate-cnt a:hover span::before {
+    background: url("../img/icons/link-solid-active.svg") no-repeat;
+  }
+}
+.main .skills .item-skill.active .item-skill__icon {
+  background-color: #345555;
+}
+.main .skills .item-skill.active .item-skill__icon::before, .main .skills .item-skill.active .item-skill__icon::after {
+  content: "";
+  display: block;
+  width: 40%;
+  height: 20%;
+  position: absolute;
+  left: 30%;
+  bottom: -10px;
+}
+.main .skills .item-skill.active .item-skill__icon::before {
+  display: none;
+  width: 20%;
+  height: 14px;
+  left: 40%;
+  bottom: 10px;
+  border-radius: 50%;
+  background: radial-gradient(#f5f5f5 0%, transparent 80%);
+  filter: blur(1px);
+  animation: mypulse 1s linear 0.5s infinite alternate;
+}
+.main .skills .item-skill.active .item-skill__icon::after {
+  border-radius: 0 0 30px 30px;
+  background: linear-gradient(180deg, #f5f5f5 0%, transparent 50%);
+  opacity: 0.2;
+  animation: mypulse 0.4s linear 0.5s 2 alternate;
+}
+.main .skills .item-skill.active .item-skill__icon svg {
+  animation: mypulse 0.4s linear 0.5s 2 alternate;
+}
+@keyframes mypulse {
+  0% {
+    transform: scale(1) rotateY(0deg);
+    filter: drop-shadow(0 0 10px #f5f5f5);
+  }
+  100% {
+    transform: scale(1.2) rotateY(180deg);
+    fill: #fff;
+    filter: drop-shadow(0 0 18px #f5f5f5);
+  }
 }
 .main .skills .item-skill__icon {
   flex: 0 0 29.84127%; /* 188/630 */
   padding: 30px;
   background-color: #343434;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease 0s;
 }
 .main .skills .item-skill__icon svg {
   height: 90px;
   width: 90px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   fill: #fff;
   filter: drop-shadow(0 0 18px #787878);
+}
+.main .skills .item-skill__icon::before, .main .skills .item-skill__icon::after {
+  content: "";
+  display: none;
+  opacity: 0;
+  transition: all 1s ease 0s;
 }
 .main .skills .item-skill__text {
   width: 100%;
@@ -618,6 +755,7 @@ body {
   }
 }
 .main .certificates {
+  display: none;
   background-color: #343434;
 }
 .main .certificates__title {
