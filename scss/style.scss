@@ -44,18 +44,13 @@ body {
     flex-direction: column;
     overflow: hidden;
 }
-// addition from js
-.decor-digit {
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    top: 0;
-    left: 0;
-}
+
 .wrraper > main {
     flex-grow: 1;
 }
 .download-cv {
+    position: relative;
+    z-index: 2;
     margin: 0;
     display: block;
     max-width: 800px;
@@ -782,8 +777,12 @@ body {
 // FOOTER
 
 .footer {
+    position: relative;
     background-color: #787878;
     // .footer__container
+    .download-cv {
+        margin: 0 auto;
+    }
 
     &__container {
     }
@@ -810,11 +809,13 @@ body {
         }
     }
     &__icons {
-        fill: #fff;
+        fill: #d9d9d9;
         transition: all 0.3s ease 0s;
     }
 }
 .columns-footer {
+    position: relative;
+    z-index: 2;
     &__item {
         font-size: 18px;
         line-height: 2;
@@ -826,7 +827,7 @@ body {
                 position: relative;
                 padding-left: 32px;
                 transition: all 0.3s ease 0s;
-                color: #fff;
+                color: #d9d9d9;
                 font-size: 24px;
                 svg {
                     font-size: 20px;
@@ -834,12 +835,12 @@ body {
                 }
                 @media (any-hover: hover) {
                     &:hover {
-                        color: #343434;
-                        text-shadow: 0 0 12px #343434;
+                        color: #f5f5f5;
+                        text-shadow: 0 0 12px #345555;
 
                         .footer__icons {
-                            filter: drop-shadow(0 0 12px #343434);
-                            fill: #343434;
+                            filter: drop-shadow(0 0 12px #345555);
+                            fill: #f5f5f5;
                         }
                     }
                 }
@@ -859,5 +860,37 @@ body {
     }
     .links {
         // text-align: right;
+    }
+}
+// addition from js
+.decor-digit-columns {
+    align-items: center;
+    justify-self: center;
+    font-size: 20px;
+    top: 120px;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    row-gap: 6px;
+    column-gap: 2px;
+}
+.decor-digit-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    column-gap: 20px;
+    z-index: 1;
+    filter: blur(1px);
+    &::before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: linear-gradient(0deg, #000 10%, #34343477 50%, #78787877 80%);
     }
 }
