@@ -413,6 +413,7 @@ body {
   font-weight: 700;
   line-height: 2;
   margin-bottom: 50px;
+  text-shadow: 0 0 45px #345555;
 }
 @media (max-width: 450px) {
   .main .portfolio__title {
@@ -533,6 +534,7 @@ body {
   font-size: 24px;
   font-weight: 900;
   line-height: 2;
+  text-shadow: 0 0 45px #345555;
 }
 .main .portfolio .preview__subtitle {
   font-size: 20px;
@@ -547,6 +549,7 @@ body {
   font-size: 48px;
   font-weight: 700;
   line-height: 2;
+  text-shadow: 0 0 45px #345555;
 }
 .main .skills__title:not(:last-child) {
   margin-bottom: 80px;
@@ -754,33 +757,6 @@ body {
     font-size: 18px;
   }
 }
-.main .certificates {
-  display: none;
-  background-color: #343434;
-}
-.main .certificates__title {
-  color: #fff;
-  text-align: center;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 2;
-}
-@media (max-width: 450px) {
-  .main .certificates__title {
-    font-size: 34px;
-  }
-}
-.main .certificates__list {
-  color: #fff;
-}
-.main .certificates__list li {
-  list-style: circle;
-  font-size: 24px;
-  line-height: 2;
-}
-.main .certificates__list a {
-  color: #fff;
-}
 
 .footer {
   position: relative;
@@ -867,6 +843,8 @@ body {
   align-items: center;
   justify-self: center;
   font-size: 20px;
+  color: #345555;
+  text-shadow: 0 0 12px #777;
   top: 120px;
   left: 0;
   display: grid;
@@ -885,7 +863,7 @@ body {
   -moz-column-gap: 20px;
        column-gap: 20px;
   z-index: 1;
-  filter: blur(1px);
+  filter: blur(2px);
 }
 .decor-digit-container::before {
   content: "";

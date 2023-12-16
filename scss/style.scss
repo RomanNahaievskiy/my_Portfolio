@@ -321,6 +321,7 @@ body {
             font-weight: 700;
             line-height: 2;
             margin-bottom: 50px;
+            text-shadow: 0 0 45px #345555;
             @media (max-width: 450px) {
                 font-size: 34px;
             }
@@ -478,6 +479,7 @@ body {
                 font-size: 24px;
                 font-weight: 900;
                 line-height: 2;
+                text-shadow: 0 0 45px #345555;
             }
 
             // .preview__subtitle
@@ -504,6 +506,7 @@ body {
             font-size: 48px;
             font-weight: 700;
             line-height: 2;
+            text-shadow: 0 0 45px #345555;
             &:not(:last-child) {
                 margin-bottom: 80px;
             }
@@ -742,39 +745,6 @@ body {
             }
         }
     }
-
-    .certificates {
-        display: none;
-        background-color: #343434;
-        // .certificates__container
-
-        &__container {
-        }
-        // .certificates__title
-        &__title {
-            color: #fff;
-            text-align: center;
-            font-size: 48px;
-            font-weight: 700;
-            line-height: 2;
-            @media (max-width: 450px) {
-                font-size: 34px;
-            }
-        }
-        // .certificates__list
-
-        &__list {
-            color: #fff;
-            li {
-                list-style: circle;
-                font-size: 24px;
-                line-height: 2;
-            }
-            a {
-                color: #fff;
-            }
-        }
-    }
 }
 
 //========================================================================================================================================================
@@ -871,6 +841,8 @@ body {
     align-items: center;
     justify-self: center;
     font-size: 20px;
+    color: #345555;
+    text-shadow: 0 0 12px #777;
     top: 120px;
     left: 0;
     display: grid;
@@ -886,7 +858,7 @@ body {
     grid-template-columns: repeat(8, 1fr);
     column-gap: 20px;
     z-index: 1;
-    filter: blur(1px);
+    filter: blur(2px);
     &::before {
         content: "";
         display: block;
