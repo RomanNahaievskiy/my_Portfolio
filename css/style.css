@@ -765,6 +765,9 @@ body {
 .footer .download-cv {
   margin: 0 auto;
 }
+.footer .download-cv:not(:last-child) {
+  margin-bottom: 60px;
+}
 .footer__columns {
   display: flex;
   justify-content: space-between;

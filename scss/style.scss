@@ -756,6 +756,9 @@ body {
     // .footer__container
     .download-cv {
         margin: 0 auto;
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
     }
 
     &__container {
