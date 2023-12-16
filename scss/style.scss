@@ -630,6 +630,10 @@ body {
                             }
                         }
                     }
+                    @media (max-width: 768px) {
+                        padding: 16px;
+                        padding-left: 166px; /* 150/416 */
+                    }
                 }
                 .item-skill__icon {
                     background-color: #345555;

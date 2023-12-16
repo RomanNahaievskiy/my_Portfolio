@@ -7,10 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
 });
 window.addEventListener('resize', function () {
+    let deviceWidth = window.innerWidth;
+    if (deviceWidth > 768) {
+        swiperInit(); // Переініціалізуємо Swiper при зміні розміру екрану
+        // this.location.reload();}
 
-    swiperInit(); // Переініціалізуємо Swiper при зміні розміру екрану
-    // this.location.reload();
 
+    }
 });
 
 function swiperInit() {

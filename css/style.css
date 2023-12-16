@@ -657,6 +657,12 @@ body {
     background: url("../img/icons/link-solid-active.svg") no-repeat;
   }
 }
+@media (max-width: 768px) {
+  .main .skills .item-skill.active .item-skill__certificate-cnt {
+    padding: 16px;
+    padding-left: 166px; /* 150/416 */
+  }
+}
 .main .skills .item-skill.active .item-skill__icon {
   background-color: #345555;
 }
