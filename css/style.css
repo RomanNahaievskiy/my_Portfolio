@@ -775,6 +775,8 @@ body {
   position: relative;
   z-index: 2;
   justify-content: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
 }
 .footer__columns {
   display: flex;
