@@ -760,6 +760,14 @@ body {
             margin-bottom: 60px;
         }
     }
+    .freelancehunt {
+        display: flex;
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+        justify-content: center;
+    }
 
     &__container {
     }

@@ -768,6 +768,14 @@ body {
 .footer .download-cv:not(:last-child) {
   margin-bottom: 60px;
 }
+.footer .freelancehunt {
+  display: flex;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+  justify-content: center;
+}
 .footer__columns {
   display: flex;
   justify-content: space-between;
