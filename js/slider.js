@@ -39,6 +39,7 @@ function swiperInit() {
 
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
             },
         });
         return swiper;
@@ -64,6 +65,7 @@ function swiperInit() {
             },
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
             },
         });
         return swiper;
@@ -87,6 +89,7 @@ function swiperInit() {
 
             pagination: {
                 el: '.swiper-pagination',
+                clickable: true,
             },
         });
         return swiper;
